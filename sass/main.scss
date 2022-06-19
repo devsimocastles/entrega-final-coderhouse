@@ -1,0 +1,124 @@
+/* 
+    ==========================
+     IMPORTACIÓN DE PARTIALS
+    ==========================
+*/
+
+
+// VARIABLES
+@import "variables";
+
+//INDEX (PAGINA DE INICIO)
+@import "index";
+
+//PÁGINA DE SERVICIOS
+@import "servicios";
+
+//PÁGINA DE CONTACTO
+@import "contacto";
+
+//PÁGINA NOSOTROS
+@import "nosotros";
+
+//PÁGINA TERMINOS Y CONDICIONES
+@import "term-y-cond";
+
+//TRANSICIONES Y ANIMACIONES
+@import "transiciones";
+
+//RESPONSIVE (MEDIA QUERIES)
+@import "responsive";
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $fuentePrincipal;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 
+   ======================
+    HEADER (Para todas las páginas)
+   ======================
+*/
+
+#header {
+    background-color: $fondoHeader;
+    color: $colorFuente;
+    height: 5.5em;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    position: sticky;
+    right: 0;
+    left: 0;
+    top: 0;
+
+    z-index: 9999;
+
+    & .header__logo {
+        font-size: 28px;
+        font-weight: 900;
+    }
+
+    & .header__nav__ul {
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+    }
+
+    & .header__nav__ul__li {
+        margin: 0 15px;
+    }
+
+    & .header__nav__ul__li__a {
+        color: $colorFuente;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* 
+    =========================
+  FOOTER (Para todas las paginas)
+    =========================
+*/
+
+#footer {
+    color: #eee;
+    background-color: #09090b;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 6em;
+
+    margin-top: auto;
+
+    & .footer__a {
+        a {
+            text-decoration: none;
+            color: $colorFuente;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    & .footer__p {
+        font-style: italic;
+    }
+}

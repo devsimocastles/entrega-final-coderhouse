@@ -1,0 +1,120 @@
+// mixin
+@mixin centrarTexto {
+    text-align: center;
+}
+
+@mixin gridArea ($gridArea){
+  grid-area: $gridArea;
+}
+
+@mixin flex($justify, $align, $direccion, $wrap){
+    display: flex;
+    flex-direction: $direccion;
+    justify-content: $justify;
+    align-items: $align;
+    flex-wrap: $wrap;
+}
+
+//extend
+%link{
+    text-decoration: none;
+    display: block;
+    color: $colorFuente;
+    background-color: $colorBotonCards;
+    border-radius: 15px;
+    padding: 0.75rem 2rem;
+    margin-top: 2rem;
+}
+
+//map
+$margin: (
+    m-1: 1rem,
+    m-2: 2rem,
+    m-3: 3rem,
+    m-4: 4rem,
+    m-5: 5rem
+); 
+
+$padding: (
+    p-1: 1rem,
+    p-2: 2rem,
+    p-3: 3rem,
+    p-4: 4rem,
+    p-5: 5rem
+);
+
+.servicios__header {
+    @include gridArea(header);
+}
+
+.servicios__footer {
+    @include gridArea(footer);
+}
+
+#servicios__body {
+    background: $fondoServicios;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "header header"
+        "main main"
+        "footer footer";
+}
+
+#servicios__main {
+    @include gridArea(main);
+    width: 90%;
+    margin: 2rem auto;
+    padding: 2rem 0;
+    border-radius: 20px;
+
+    & .titulo__principal {
+        @include centrarTexto;
+        text-transform: capitalize;
+        padding: 2rem 0;
+        color: $colorCards;
+    }
+
+    & .parrafo__principal {
+        @include centrarTexto;
+        font-style: oblique;
+        font-size: 20px;
+        padding-bottom: map-get($padding, "p-2");
+        color: $colorCards;
+    }
+
+    & .main__card__container {
+        @include flex(center, center, row, wrap);
+        gap: 2rem;
+ 
+        & .card {
+            @include flex(space-around, center, column, nowrap);
+            background-color: $colorCards;
+            box-shadow: $sombraCards;
+            border-radius: 15px;
+            width: 20em;
+            margin: map-get($margin, "m-2");
+            padding: map-get($padding, "p-2");
+
+            & .card__subtitle {
+                margin: 1rem 0;
+                @include centrarTexto;
+            }
+
+            & .card__parrafo {
+                @include centrarTexto;
+            }
+
+            & .card__btn {
+                a {
+                    @extend %link;
+                    &:hover {
+                        text-decoration: underline;
+                        background-color: $colorBotonCardsHover;
+                    }
+                }
+            }
+        }
+    }
+}
