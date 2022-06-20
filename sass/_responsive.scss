@@ -110,6 +110,41 @@
         }
     }
 
+    /* PAGINA DE CONTACTO */
+    #contacto__main{
+        .parrafo__principal{
+            margin: 0 1rem 1rem 1rem;
+            font-size: 18px;
+        }
+        .seccion__email{
+            .subtitulo{
+                h3{
+                    font-size: .9rem;
+                }
+            }
+        }
+        .seccion__redes-sociales{
+            padding: 0;
+            .subtitulo{
+                font-size: .9rem;
+                margin: 0 2rem 2rem 2rem;
+            }
+            .icon__container{
+                .icon{
+                    padding-top: 1.25rem;
+                }
+            }
+        }
+        .seccion__mapa{
+            padding: 0;
+            .maps__iframe{
+                width: 80%;
+                height: auto;
+                margin: 0 auto;
+            }
+        }
+    }
+
     /* PAGINA TERMINOS Y CONDICIONES */ 
     #t-y-c__main{
         .titulo__principal{
