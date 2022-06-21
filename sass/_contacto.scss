@@ -11,6 +11,7 @@
         flex-flow: column nowrap;
         justify-content: space-evenly;
         align-items: center;
+       
 
         .titulo__principal {
             text-align: center;
@@ -73,7 +74,7 @@
                 flex-flow: column nowrap;
                 justify-content: space-evenly;
                 align-items: center;
-                width: 23em;
+                width: max-content;
                 height: 23em;
                 & .icon{
                     text-decoration: none;

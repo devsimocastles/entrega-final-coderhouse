@@ -304,7 +304,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 23em;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   height: 23em;
 }
 
